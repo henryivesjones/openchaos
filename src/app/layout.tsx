@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { Cat } from "@/components/Cat";
 import "./globals.css";
 import "./retro.css";
+import { pageCounter } from "@/lib/count/pageCounter";
 
 export const metadata: Metadata = {
   title: "OpenChaos.dev",
@@ -14,6 +15,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  pageCounter.increment();
   return (
     <html lang="en">
       <body>
